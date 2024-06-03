@@ -11,7 +11,6 @@ import WhatsAppWidget from "./components/WhatsAppWidget";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ProductDetail from "./components/ProductDetail";
-sss;
 import ProductsByCategory from "./components/ProductsByCategory";
 
 const App = () => {
