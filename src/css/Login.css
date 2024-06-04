@@ -1,20 +1,75 @@
+/* Login.css */
+
+body {
+  background-color: #f8f9fa;
+}
+
+/* Center the form vertically and horizontally */
+.d-flex.align-items-center.min-vh-100 {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+/* Form container styling */
 .form-signin {
-  max-width: 330px;
-  padding: 1rem;
+  width: 100%;
+  max-width: 420px;
+  padding: 15px;
+  margin: auto;
+  border-radius: 8px;
+  background-color: #d4d4d4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0.2, 0.1);
 }
 
-.form-signin .form-floating:focus-within {
-  z-index: 2;
+/* Header styling */
+.form-signin h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #343a40;
 }
 
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
+/* Input field styling */
+.form-signin .form-floating {
+  margin-bottom: 1rem;
 }
 
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.form-signin .form-floating input {
+  height: 58px;
+  padding: 20px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+}
+
+.form-signin .form-floating label {
+  padding: 0 1rem;
+  color: #495057;
+}
+
+/* Link styling */
+.form-signin .text-start a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-signin .text-start a:hover {
+  text-decoration: underline;
+}
+
+/* Button styling */
+.form-signin .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  padding: 12px 0;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.form-signin .btn-primary:hover {
+  background-color: #00438a;
+  border-color: #0056b3;
 }

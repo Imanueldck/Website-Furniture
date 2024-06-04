@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import "../css/Cart.css";
 
 const Cart = () => {
   const TAX_RATE = 0.01;
