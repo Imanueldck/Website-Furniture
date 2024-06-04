@@ -9,6 +9,7 @@ const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [reviews, setReviews] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     axios
@@ -29,6 +30,11 @@ const ProductDetail = () => {
         console.error("Error fetching the product reviews:", error);
       });
   }, [id]);
+
+  const addToCart = () => {
+    setCart([...cart, product]);
+    alert("Product added to cart!");
+  };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -51,7 +57,7 @@ const ProductDetail = () => {
           </p>
           <div className="product-actions">
             <input type="number" defaultValue="1" min="1" />
-            <button>Add to Cart</button>
+            <button onClick={addToCart}>Add to Cart</button>
           </div>
         </div>
       </div>
