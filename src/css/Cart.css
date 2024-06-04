@@ -1,0 +1,147 @@
+/* Cart.css */
+
+/* General container styles */
+.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.card-cart {
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.card-cart .card-body {
+  padding: 1.5rem;
+}
+
+/* Shopping cart item styles */
+.card-cart img.img-fluid.rounded-3 {
+  width: 65px;
+}
+
+.card-cart h5 {
+  margin-bottom: 0.75rem;
+}
+
+.card-cart .d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.card-cart .d-flex.justify-content-between {
+  justify-content: space-between;
+}
+
+.card-cart .d-flex.flex-row {
+  flex-direction: row;
+}
+
+.card-cart .ms-3 {
+  margin-left: 1rem;
+}
+
+.card-cart .btn-sm {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.card-cart .btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.card-cart .btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Styles for the continue shopping link */
+.text-body {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.text-body:hover {
+  text-decoration: underline;
+}
+
+.fa-long-arrow-alt-left {
+  margin-right: 0.5rem;
+}
+
+/* Styles for the shipping details card */
+.card.bg-primary.text-white {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.card.bg-primary.text-white .card-body {
+  padding: 1.5rem;
+}
+
+.form-control,
+.form-select {
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.hr {
+  margin: 0.5rem 0;
+  border: none;
+  border-top: 1px solid #dee2e6;
+}
+
+/* Utility classes for alignment and spacing */
+.d-flex.justify-content-between {
+  justify-content: space-between;
+}
+
+.d-flex.flex-row {
+  flex-direction: row;
+}
+
+.p-4 {
+  padding: 1.5rem !important;
+}
+
+.rounded-3 {
+  border-radius: 0.75rem !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+@media (min-width: 992px) {
+  .h-100 {
+    height: 100% !important;
+  }
+}
