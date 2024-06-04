@@ -145,3 +145,31 @@
     height: 100% !important;
   }
 }
+/* Tambahkan aturan CSS di dalam media query untuk ukuran layar mobile */
+@media (max-width: 375px) {
+  /* Ubah lebar gambar agar sesuai dengan tampilan pada layar mobile */
+  .card-cart img.img-fluid.rounded-3 {
+    width: 50px;
+  }
+
+  /* Ubah ukuran font untuk teks menjadi lebih kecil pada layar mobile */
+  .card-cart h5 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Sesuaikan jarak margin antara elemen pada tampilan mobile */
+  .card-cart .ms-3 {
+    margin-left: 0.5rem;
+  }
+
+  /* Sesuaikan padding tombol agar lebih sesuai dengan tampilan mobile */
+  .card-cart .btn-sm {
+    padding: 0.2rem 0.4rem;
+  }
+
+  /* Sesuaikan padding untuk konten kartu agar lebih sesuai dengan tampilan mobile */
+  .card-cart .card-body {
+    padding: 1rem;
+  }
+}

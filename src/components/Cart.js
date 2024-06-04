@@ -189,14 +189,6 @@ const Cart = () => {
                         <p className="mb-1">Shopping cart</p>
                         <p className="mb-0">You have {cartItems.length} items in your cart</p>
                       </div>
-                      <div>
-                        <p className="mb-0">
-                          <span className="text-muted">Sort by:</span>{" "}
-                          <a href="#!" className="text-body">
-                            price <i className="fas fa-angle-down mt-1"></i>
-                          </a>
-                        </p>
-                      </div>
                     </div>
 
                     {renderCartItems()}
