@@ -31,7 +31,6 @@
   margin-bottom: 20px;
   color: #333;
   text-align: center;
-  justify-content: center;
 }
 
 .info-column p {
@@ -73,6 +72,11 @@
 }
 
 @media (max-width: 768px) {
+  .detail-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .detail-column {
     min-width: 100%;
   }
@@ -99,6 +103,30 @@
     text-align: center;
   }
 }
+/* ProdukDetail.css */
+/* ProdukDetail.css */
+
+/* Tambahkan aturan CSS berikut di dalam media query untuk ukuran layar mobile */
+@media (max-width: 375px) {
+  .image-column img {
+    max-height: 150px; /* Sesuaikan tinggi maksimum gambar dengan kebutuhan Anda */
+  }
+
+  .info-column p {
+    font-size: 0.7em; /* Ubah ukuran font untuk teks menjadi lebih kecil */
+  }
+
+  .product-actions input {
+    width: 40px; /* Ubah lebar input menjadi lebih kecil */
+    font-size: 0.7em; /* Ubah ukuran font untuk input menjadi lebih kecil */
+  }
+
+  .product-actions button {
+    padding: 6px 12px; /* Sesuaikan padding tombol agar lebih sesuai dengan tampilan mobile */
+    font-size: 0.7em; /* Ubah ukuran font untuk tombol menjadi lebih kecil */
+  }
+}
+
 .review-container {
   max-width: 90%;
   margin: 20px auto;
