@@ -82,11 +82,11 @@
   padding: 1.5rem;
 }
 
-.form-control,
+/* .form-control,
 .form-select {
   margin-bottom: 1rem;
   border-radius: 0.25rem;
-}
+} */
 
 .btn-block {
   display: block;
