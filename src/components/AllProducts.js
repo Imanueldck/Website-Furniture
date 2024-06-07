@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import "../css/all.css";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import "../css/all.css";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
