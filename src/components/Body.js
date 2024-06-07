@@ -2,6 +2,10 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../css/Body.css";
+import qualityImage from "../images/qualiti.png";
+import serviceImage from "../images/jabat.png";
+import varietyImage from "../images/jempol.png";
+import affordabilityImage from "../images/uang.png";
 
 const Body = () => {
   const productsWrapperRef = useRef(null);
@@ -13,8 +17,12 @@ const Body = () => {
   const scrollRight = () => {
     productsWrapperRef.current.scrollLeft += 300;
   };
+
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const productsPerPage = 8;
+
   useEffect(() => {
     // Fetch products
     axios
@@ -37,9 +45,20 @@ const Body = () => {
       });
   }, []);
 
+  // Calculate total pages
+  const totalPages = Math.ceil(products.length / productsPerPage);
+
+  // Get current products
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
+
+  // Handle page change
+  const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div>
-      <section id="about-us" className="container">
+      <section id="about-us" className="about-us-section container">
         <h1> Tentang Kami</h1>
         <div className="row featurette p-5">
           <div className="col-md-7">
@@ -59,12 +78,12 @@ const Body = () => {
       </section>
 
       {/* Bagian Why Choose Us */}
-      <section id="why-choose-us" className="container">
-        <hr></hr>
+      <section id="why-choose-us" className="why-choose-us-section container">
+        <hr />
         <div className="row">
           <div className="col-md-3">
-            <div className="card">
-              <img src="./images/quality.jpg" className="card-img-top" alt="Quality" />
+            <div className="card why-choose-us-card">
+              <img src={qualityImage} className="card-img-top" alt="Quality" />
               <div className="card-body">
                 <h5 className="card-title">Quality</h5>
                 <p className="card-text">We provide high-quality products that are built to last.</p>
@@ -72,8 +91,8 @@ const Body = () => {
             </div>
           </div>
           <div className="col-md-3">
-            <div className="card">
-              <img src="./images/service.jpg" className="card-img-top" alt="Service" />
+            <div className="card why-choose-us-card">
+              <img src={serviceImage} className="card-img-top" alt="Service" />
               <div className="card-body">
                 <h5 className="card-title">Service</h5>
                 <p className="card-text">Our team is dedicated to providing excellent customer service.</p>
@@ -81,8 +100,8 @@ const Body = () => {
             </div>
           </div>
           <div className="col-md-3">
-            <div className="card">
-              <img src="./images/variety.jpg" className="card-img-top" alt="Variety" />
+            <div className="card why-choose-us-card">
+              <img src={varietyImage} className="card-img-top" alt="Variety" />
               <div className="card-body">
                 <h5 className="card-title">Variety</h5>
                 <p className="card-text">Choose from a wide range of options to suit your needs.</p>
@@ -90,8 +109,8 @@ const Body = () => {
             </div>
           </div>
           <div className="col-md-3">
-            <div className="card">
-              <img src="./images/affordability.jpg" className="card-img-top" alt="Affordability" />
+            <div className="card why-choose-us-card">
+              <img src={affordabilityImage} className="card-img-top" alt="Affordability" />
               <div className="card-body">
                 <h5 className="card-title">Affordability</h5>
                 <p className="card-text">Get great products at affordable prices.</p>
@@ -129,15 +148,19 @@ const Body = () => {
       </section>
 
       {/* Bagian Our Products */}
-      <section id="our-products" className="container">
-        <h1>
-          <hr />
-          Produk Kami
-        </h1>
+      <section id="our-products" className="our-products-section container">
+        <div className="our-products-header">
+          <h1>Produk Kami</h1>
+
+          <Link to="/all-products" className="view-products-link">
+            Lihat Semua Produk →
+          </Link>
+        </div>
+        <hr />
         <div className="row">
-          {products.map((product) => (
+          {currentProducts.map((product) => (
             <div className="col-md-3" key={product.id}>
-              <div className="card">
+              <div className="card our-produk-card">
                 <Link to={`/product/${product.id}`}>
                   <img src={product.image} className="card-img-top" alt={product.title} />
                 </Link>
@@ -151,6 +174,7 @@ const Body = () => {
             </div>
           ))}
         </div>
+        <Pagination totalPages={totalPages} currentPage={currentPage} handlePageChange={handlePageChange} />
       </section>
 
       {/* Sale */}
@@ -235,6 +259,28 @@ const Body = () => {
         </button>
       </section>
     </div>
+  );
+};
+
+const Pagination = ({ totalPages, currentPage, handlePageChange }) => {
+  const pageNumbers = [];
+
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <nav>
+      <ul className="pagination justify-content-center">
+        {pageNumbers.map((number) => (
+          <li key={number} className={`page-item ${number === currentPage ? "active" : ""}`}>
+            <button onClick={() => handlePageChange(number)} className="page-link">
+              {number}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

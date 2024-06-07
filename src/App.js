@@ -13,6 +13,7 @@ import Register from "./components/Register";
 import ProductDetail from "./components/ProductDetail";
 import ProductsByCategory from "./components/ProductsByCategory";
 import Cart from "./components/Cart";
+import AllProducts from "./components/AllProducts"; // Import halaman AllProducts
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/all-products" element={<AllProducts />} />
         <Route
           path="/"
           element={
