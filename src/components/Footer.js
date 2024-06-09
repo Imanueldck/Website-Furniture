@@ -1,12 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faWhatsapp,
-  faXTwitter,
-  faFacebookF,
-} from "@fortawesome/free-brands-svg-icons";
+import { faInstagram, faWhatsapp, faXTwitter, faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import "../css/Footer.css";
 
 const Footer = () => {
@@ -15,8 +10,8 @@ const Footer = () => {
       <React.Fragment />
       <footer className="footer-1 py-4 text-light">
         <div className="container py-2">
-          <div className="row mb-0">
-            <div className="col-12 col-lg-5">
+          <div className="row mb-3">
+            <div className="col-12 col-lg-5 mb-4">
               <a className="navbar-brand" href="#">
                 <b>Mebelin Furniture</b>
               </a>
@@ -43,48 +38,30 @@ const Footer = () => {
                 Kode Pos 50185
               </p>
             </div>
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-4 ">
               <ul className="mb-0 list-unstyled">
-                <div className="row">
+                <div className="row mb-5">
                   <div className="col-12">
-                    <h4 className="h6 text-wrapper mb-3 font-weight-bold">
-                      CONTACT US
-                    </h4>
+                    <h4 className="h6 text-wrapper mb-3 font-weight-bold">CONTACT US</h4>
                     <li className="p-0 mt-0">
                       <ul className="list-unstyled">
                         <li className="d-inline me-3">
-                          <a
-                            className="text-light link-nodecor"
-                            target="_blank"
-                            href="#"
-                          >
+                          <a className="text-light link-nodecor" target="_blank" href="#">
                             <FontAwesomeIcon icon={faXTwitter} size="xl" />
                           </a>
                         </li>
                         <li className="d-inline me-3">
-                          <a
-                            className="text-light link-nodecor"
-                            target="_blank"
-                            href="#"
-                          >
+                          <a className="text-light link-nodecor" target="_blank" href="#">
                             <FontAwesomeIcon icon={faFacebookF} size="xl" />
                           </a>
                         </li>
                         <li className="d-inline me-3">
-                          <a
-                            className="text-light link-nodecor"
-                            target="_blank"
-                            href="#"
-                          >
+                          <a className="text-light link-nodecor" target="_blank" href="#">
                             <FontAwesomeIcon icon={faInstagram} size="xl" />
                           </a>
                         </li>
                         <li className="d-inline me-3">
-                          <a
-                            className="text-light link-nodecor"
-                            target="_blank"
-                            href="#"
-                          >
+                          <a className="text-light link-nodecor" target="_blank" href="#">
                             <FontAwesomeIcon icon={faWhatsapp} size="xl" />
                           </a>
                         </li>
@@ -116,9 +93,7 @@ const Footer = () => {
       </footer>
       <footer class="footer-2 py-2 text-light privacy">
         <p class="text-center px-5 mb-0 d-flex flex-column flex-sm-row justify-content-center">
-          <span class="mb-1 mb-sm-0">
-            © 2024 Mebelin Furniture. All Rights Reserved.
-          </span>
+          <span class="mb-1 mb-sm-0">© 2024 Mebelin Furniture. All Rights Reserved.</span>
         </p>
       </footer>
     </>
