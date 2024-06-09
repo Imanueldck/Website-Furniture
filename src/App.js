@@ -10,36 +10,52 @@ import Footer from "./components/Footer";
 import WhatsAppWidget from "./components/WhatsAppWidget";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import ProductDetail from "./components/ProductDetail";
-import ProductsByCategory from "./components/ProductsByCategory";
 import Cart from "./components/Cart";
-import AllProducts from "./components/AllProducts"; // Import halaman AllProducts
+import ProductDetail from "./components/ProductDetail";
+import ProductsByCategory from "./components/ProductByCategory";
+import AllProducts from "./components/AllProducts";
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/all-products" element={<AllProducts />} />
+        <Route path="/" element={<Home />} />
         <Route
-          path="/"
+          path="/login"
           element={
             <>
               <Navbar />
-              <Carousel />
-              <Body />
-              <WhatsAppWidget />
-              <Footer />
+              <Login />
             </>
           }
         />
+        <Route
+          path="/register"
+          element={
+            <>
+              <Navbar />
+              <Register />
+            </>
+          }
+        />
+        <Route path="/all-products/" element={<AllProducts />} />
+
+        <Route path="/cart" element={<Cart />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/category/:category" element={<ProductsByCategory />} />
-        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
   );
 };
+
+const Home = () => (
+  <>
+    <Navbar />
+    <Carousel />
+    <Body />
+    <WhatsAppWidget />
+    <Footer />
+  </>
+);
 
 export default App;

@@ -1,57 +1,53 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../css/Login.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Login = () => {
   return (
-    <div className="custom-bg-gradient-primary">
-      <div className="container custom-container-login">
-        <div className="row justify-content-center">
-          <div className="col-xl-10 col-lg-12 col-md-9">
-            <div className="card o-hidden border-0 shadow-lg my-5">
-              <div className="card-body p-0">
-                <div className="row">
-                  <div className="col-lg-6 d-none d-lg-block custom-bg-login-image"></div>
-                  <div className="col-lg-6">
-                    <div className="p-5">
-                      <div className="text-center">
-                        <h1 className="h4 custom-text-gray-900 mb-4">Welcome Back!</h1>
-                      </div>
-                      <form className="custom-user">
-                        <div className="form-group">
-                          <input type="email" className="form-control custom-form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..." />
-                        </div>
-                        <div className="form-group">
-                          <input type="password" className="form-control custom-form-control-user" id="exampleInputPassword" placeholder="Password" />
-                        </div>
-                        <div className="form-group">
-                          <div className="custom-control custom-checkbox small">
-                            <input type="checkbox" className="custom-control-input" id="customCheck" />
-                            <label className="custom-control-label" htmlFor="customCheck">
-                              Remember Me
-                            </label>
-                          </div>
-                        </div>
-                        <button type="submit" className="btn btn-primary custom-btn-user btn-block">
-                          Login
-                        </button>
-                        <hr />
-                      </form>
-                      <hr />
-                      <div className="text-center">
-                        <a className="small" href="forgot-password.html">
-                          Forgot Password?
-                        </a>
-                      </div>
-                      <div className="text-center">
-                        <a className="small" href="register.html">
-                          Create an Account!
-                        </a>
-                      </div>
-                    </div>
+    <div className="container d-flex flex-column">
+      <div
+        className="row align-items-center justify-content-center g-0
+      min-vh-100"
+      >
+        <div className="col-12 col-md-8 col-lg-6 col-xxl-4 py-5 py-xl-0">
+          <div className="card card-outline smooth-shadow">
+            <div className="card-body p-4">
+              <div className="mb-4">
+                <h1>Login</h1>
+                <p className="mb-6">Please enter your user information.</p>
+              </div>
+              <form>
+                <div className="input-group">
+                  <div className="form-floating mb-3">
+                    <input
+                      type="email"
+                      className="form-control"
+                      id="floatingInput"
+                      placeholder="name@example.com"
+                    />
+                    <label for="floatingInput">Email address</label>
                   </div>
                 </div>
-              </div>
+
+                <div className="form-floating mb-3">
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="floatingPassword"
+                    placeholder="Password"
+                  />
+                  <label for="floatingPassword">Password</label>
+                </div>
+
+                <div className="text-start my-3 ">
+                  <Link to="/register" className="text-success">
+                    Dont have account? Register
+                  </Link>
+                </div>
+                <button className="btn btn-success w-100 py-2" type="submit">
+                  Login
+                </button>
+              </form>
             </div>
           </div>
         </div>

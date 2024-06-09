@@ -2,11 +2,13 @@ import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../css/Body.css";
-import qualityImage from "../images/qualiti.png";
-import serviceImage from "../images/jabat.png";
-import varietyImage from "../images/jempol.png";
-import affordabilityImage from "../images/uang.png";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSackDollar,
+  faThumbsUp,
+  faHandshake,
+  faMedal,
+} from "@fortawesome/free-solid-svg-icons";
 const Body = () => {
   const productsWrapperRef = useRef(null);
 
@@ -20,8 +22,8 @@ const Body = () => {
 
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 8;
+  const [currentPage] = useState(1);
+  const productsPerPage = 12;
 
   useEffect(() => {
     // Fetch products
@@ -45,34 +47,44 @@ const Body = () => {
       });
   }, []);
 
-  // Calculate total pages
-  const totalPages = Math.ceil(products.length / productsPerPage);
-
   // Get current products
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
-
-  // Handle page change
-  const handlePageChange = (pageNumber) => setCurrentPage(pageNumber);
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
 
   return (
     <div>
       <section id="about-us" className="about-us-section container">
-        <h1> Tentang Kami</h1>
-        <div className="row featurette p-5">
+        <h1 className="h1-center"> Tentang Kami</h1>
+        <div className="row featurette">
           <div className="col-md-7">
             <h2 className="featurette-heading lh-1">Mebelin Furniture</h2>
             <p className="lead">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ut. Itaque quod vel incidunt, porro quo voluptate hic, iusto voluptates fugit quis maiores adipisci dolorum quos maxime dolorem sed nemo commodi modi in animi
-              qui deserunt. Nemo laboriosam molestias temporibus placeat harum suscipit ipsum dolorum, eum libero quia facilis quae architecto voluptatibus reprehenderit officia reiciendis. Nemo enim omnis placeat recusandae qui magni
-              commodi, rem debitis hic totam tempora soluta, quis eos vero voluptatem, velit tenetur consequatur? Tempora accusantium nesciunt id asperiores fuga distinctio aut! Laborum culpa voluptatum alias aliquam voluptates consequatur
-              recusandae officiis dolore accusantium in? Nostrum ullam eaque ex.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
+              ut. Itaque quod vel incidunt, porro quo voluptate hic, iusto
+              voluptates fugit quis maiores adipisci dolorum quos maxime dolorem
+              sed nemo commodi modi in animi qui deserunt. Nemo laboriosam
+              molestias temporibus placeat harum suscipit ipsum dolorum, eum
+              libero quia facilis quae architecto voluptatibus reprehenderit
+              officia reiciendis. Nemo enim omnis placeat recusandae qui magni
+              commodi, rem debitis hic totam tempora soluta, quis eos vero
+              voluptatem, velit tenetur consequatur? Tempora accusantium
+              nesciunt id asperiores fuga distinctio aut! Laborum culpa
+              voluptatum alias aliquam voluptates consequatur recusandae
+              officiis dolore accusantium in? Nostrum ullam eaque ex.
               <br />
             </p>
           </div>
           <div className="col-md-5">
-            <img src="https://m.media-amazon.com/images/I/81UwP++piNL._AC_SL1500_.jpg" alt="about-us" width="450" height="450" />
+            <img
+              src="https://m.media-amazon.com/images/I/81UwP++piNL._AC_SL1500_.jpg"
+              alt="about-us"
+              width="450"
+              height="450"
+            />
           </div>
         </div>
       </section>
@@ -82,38 +94,50 @@ const Body = () => {
         <hr />
         <div className="row">
           <div className="col-md-3">
-            <div className="card why-choose-us-card">
-              <img src={qualityImage} className="card-img-top" alt="Quality" />
+            <div className="card why-choose-us-card card-transition">
+              <FontAwesomeIcon icon={faMedal} size="10x" className="m-4" />
+
               <div className="card-body">
                 <h5 className="card-title">Quality</h5>
-                <p className="card-text">We provide high-quality products that are built to last.</p>
+                <p className="card-text">
+                  We provide high-quality products that are built to last.
+                </p>
               </div>
             </div>
           </div>
           <div className="col-md-3">
             <div className="card why-choose-us-card">
-              <img src={serviceImage} className="card-img-top" alt="Service" />
+              <FontAwesomeIcon icon={faHandshake} size="10x" className="m-4" />
+
               <div className="card-body">
                 <h5 className="card-title">Service</h5>
-                <p className="card-text">Our team is dedicated to providing excellent customer service.</p>
+                <p className="card-text">
+                  Our team is dedicated to providing excellent customer service.
+                </p>
               </div>
             </div>
           </div>
           <div className="col-md-3">
             <div className="card why-choose-us-card">
-              <img src={varietyImage} className="card-img-top" alt="Variety" />
+              <FontAwesomeIcon icon={faThumbsUp} size="10x" className="m-4" />
+
               <div className="card-body">
                 <h5 className="card-title">Variety</h5>
-                <p className="card-text">Choose from a wide range of options to suit your needs.</p>
+                <p className="card-text">
+                  Choose from a wide range of options to suit your needs.
+                </p>
               </div>
             </div>
           </div>
           <div className="col-md-3">
             <div className="card why-choose-us-card">
-              <img src={affordabilityImage} className="card-img-top" alt="Affordability" />
+              <FontAwesomeIcon icon={faSackDollar} size="10x" className="m-4" />
+
               <div className="card-body">
                 <h5 className="card-title">Affordability</h5>
-                <p className="card-text">Get great products at affordable prices.</p>
+                <p className="card-text">
+                  Get great products at affordable prices.
+                </p>
               </div>
             </div>
           </div>
@@ -122,17 +146,17 @@ const Body = () => {
 
       {/* Bagian Kategori */}
       <section id="category" className="container">
-        <h1>
-          <hr />
-          Kategori
-        </h1>
+        <hr />
+        <h1 className="h1-center">Kategori</h1>
         <div className="row">
           {categories.map((category, index) => (
             <div className="col-md-3" key={index}>
-              <div className="card">
+              <div className="card card-transition">
                 <Link to={`/category/${category}`}>
                   <img
-                    src={`https://fakestoreapi.com/img/category${index + 1}.jpg`} // Placeholder for category image
+                    src={`https://fakestoreapi.com/img/category${
+                      index + 1
+                    }.jpg`} // Placeholder for category image
                     className="card-img-top"
                     alt={category}
                   />
@@ -145,24 +169,28 @@ const Body = () => {
             </div>
           ))}
         </div>
+        <hr />
       </section>
 
       {/* Bagian Our Products */}
       <section id="our-products" className="our-products-section container">
         <div className="our-products-header">
-          <h1>Produk Kami</h1>
+          <h1 className="h1-product">Produk Kami</h1>
 
           <Link to="/all-products" className="view-products-link">
             Lihat Semua Produk →
           </Link>
         </div>
-        <hr />
         <div className="row">
           {currentProducts.map((product) => (
-            <div className="col-md-3" key={product.id}>
+            <div className="col-md-3 mb-5" key={product.id}>
               <div className="card our-produk-card">
                 <Link to={`/product/${product.id}`}>
-                  <img src={product.image} className="card-img-top" alt={product.title} />
+                  <img
+                    src={product.image}
+                    className="card-img-top"
+                    alt={product.title}
+                  />
                 </Link>
                 <div className="card-body">
                   <h5 className="card-title">{product.title}</h5>
@@ -174,7 +202,6 @@ const Body = () => {
             </div>
           ))}
         </div>
-        <Pagination totalPages={totalPages} currentPage={currentPage} handlePageChange={handlePageChange} />
       </section>
 
       {/* Sale */}
@@ -182,7 +209,7 @@ const Body = () => {
 
       {/* Bagian Produk dengan navigasi */}
       <section className="products-container container">
-        <h1>Produk Populer</h1>
+        <h1 className="h1">Produk Populer</h1>
         <button className="navigation-button left" onClick={scrollLeft}>
           &lt;
         </button>
@@ -259,28 +286,6 @@ const Body = () => {
         </button>
       </section>
     </div>
-  );
-};
-
-const Pagination = ({ totalPages, currentPage, handlePageChange }) => {
-  const pageNumbers = [];
-
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
-
-  return (
-    <nav>
-      <ul className="pagination justify-content-center">
-        {pageNumbers.map((number) => (
-          <li key={number} className={`page-item ${number === currentPage ? "active" : ""}`}>
-            <button onClick={() => handlePageChange(number)} className="page-link">
-              {number}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </nav>
   );
 };
 

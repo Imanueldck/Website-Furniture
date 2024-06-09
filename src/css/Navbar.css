@@ -4,13 +4,20 @@
   background-color: #294b29;
   color: white;
 }
+
+.offcanvas-body {
+  background-color: #294b29;
+}
+
+.offcanvas-header {
+  color: white;
+  background-color: #294b29;
+}
+
 .navbar-brand {
   font-size: 1.5rem;
 }
 
-.nav-link {
-  color: #fff !important;
-}
 .brand-image {
   float: right;
   line-height: 0.8;
@@ -27,4 +34,10 @@
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+}
+.search-form {
+  width: 100%;
+  max-width: 500px; /* Adjust as needed */
+  display: flex;
+  justify-content: center;
 }

@@ -1,0 +1,77 @@
+/* Gaya khusus untuk kartu produk pada bagian All Products */
+.all-products-section .our-produk-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.all-products-section .our-produk-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Gaya untuk gambar di dalam kartu produk */
+.all-products-section .our-produk-card .card-img-top {
+  width: 100%;
+  height: 200px; /* Tinggi yang konsisten untuk semua gambar */
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Gaya untuk judul dan teks di dalam kartu produk */
+.all-products-section .our-produk-card .card-body {
+  text-align: center;
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.all-products-section .our-produk-card .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.all-products-section .our-produk-card .card-text {
+  font-size: 1rem;
+  color: #333333;
+  margin-top: auto;
+}
+
+/* Gaya untuk sidebar kategori */
+.card-category {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.card-category .card-header {
+  background-color: #f8f9fa;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-category .list-group-item {
+  cursor: pointer;
+}
+
+.card-category .list-group-item.active {
+  font-weight: bold;
+  color: #007bff;
+  background-color: #e9ecef;
+  border-color: #ddd;
+}
+
+/* Gaya untuk container utama */
+.container-allproduct {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 75px;
+}
+
+.all-products-section {
+  padding: 20px;
+}

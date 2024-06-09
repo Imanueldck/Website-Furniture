@@ -1,175 +1,34 @@
-/* Cart.css */
-
-/* General container styles */
-.container {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.card-cart {
-  border: none;
-  margin-bottom: 1rem;
-}
-
-.card-cart .card-body {
-  padding: 1.5rem;
-}
-
-/* Shopping cart item styles */
-.card-cart img.img-fluid.rounded-3 {
-  width: 65px;
-}
-
-.card-cart h5 {
-  margin-bottom: 0.75rem;
-}
-
-.card-cart .d-flex {
-  display: flex;
-  align-items: center;
-}
-
-.card-cart .d-flex.justify-content-between {
-  justify-content: space-between;
-}
-
-.card-cart .d-flex.flex-row {
-  flex-direction: row;
-}
-
-.card-cart .ms-3 {
-  margin-left: 1rem;
-}
-
-.card-cart .btn-sm {
-  font-size: 0.875rem;
-  padding: 0.25rem 0.5rem;
-}
-
-.card-cart .btn-danger {
-  color: #fff;
-  background-color: #dc3545;
-  border-color: #dc3545;
-}
-
-.card-cart .btn-primary {
-  color: #fff;
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-/* Styles for the continue shopping link */
-.text-body {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.text-body:hover {
-  text-decoration: underline;
-}
-
-.fa-long-arrow-alt-left {
-  margin-right: 0.5rem;
-}
-
-/* Styles for the shipping details card */
-.card.bg-primary.text-white {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.card.bg-primary.text-white .card-body {
-  padding: 1.5rem;
-}
-
-/* .form-control,
-.form-select {
-  margin-bottom: 1rem;
-  border-radius: 0.25rem;
-} */
-
-.btn-block {
-  display: block;
-  width: 100%;
-}
-
-.me-2 {
-  margin-right: 0.5rem;
-}
-
-.mb-0 {
-  margin-bottom: 0;
-}
-
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-
-.mb-3 {
-  margin-bottom: 1rem;
-}
-
-.hr {
-  margin: 0.5rem 0;
-  border: none;
-  border-top: 1px solid #dee2e6;
-}
-
-/* Utility classes for alignment and spacing */
-.d-flex.justify-content-between {
-  justify-content: space-between;
-}
-
-.d-flex.flex-row {
-  flex-direction: row;
-}
-
-.p-4 {
-  padding: 1.5rem !important;
-}
-
-.rounded-3 {
-  border-radius: 0.75rem !important;
-}
-
-.text-muted {
-  color: #6c757d !important;
-}
-
-.text-center {
-  text-align: center !important;
-}
-
-@media (min-width: 992px) {
-  .h-100 {
-    height: 100% !important;
-  }
-}
-/* Tambahkan aturan CSS di dalam media query untuk ukuran layar mobile */
-@media (max-width: 375px) {
-  /* Ubah lebar gambar agar sesuai dengan tampilan pada layar mobile */
-  .card-cart img.img-fluid.rounded-3 {
-    width: 50px;
-  }
-
-  /* Ubah ukuran font untuk teks menjadi lebih kecil pada layar mobile */
-  .card-cart h5 {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-
-  /* Sesuaikan jarak margin antara elemen pada tampilan mobile */
-  .card-cart .ms-3 {
-    margin-left: 0.5rem;
-  }
-
-  /* Sesuaikan padding tombol agar lebih sesuai dengan tampilan mobile */
-  .card-cart .btn-sm {
-    padding: 0.2rem 0.4rem;
-  }
-
-  /* Sesuaikan padding untuk konten kartu agar lebih sesuai dengan tampilan mobile */
-  .card-cart .card-body {
-    padding: 1rem;
-  }
-}
+@media (min-width: 1025px) {
+    .h-custom {
+    height: 100vh !important;
+    }
+    }
+    
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    
+    .card-registration .select-arrow {
+    top: 13px;
+    }
+    
+    .bg-grey {
+    background-color: #eae8e8;
+    }
+    
+    @media (min-width: 992px) {
+    .card-registration-2 .bg-grey {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    }
+    }
+    
+    @media (max-width: 991px) {
+    .card-registration-2 .bg-grey {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    }
+    }
