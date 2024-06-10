@@ -3,12 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "../css/Body.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSackDollar,
-  faThumbsUp,
-  faHandshake,
-  faMedal,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSackDollar, faThumbsUp, faHandshake, faMedal } from "@fortawesome/free-solid-svg-icons";
 const Body = () => {
   const productsWrapperRef = useRef(null);
 
@@ -50,10 +45,7 @@ const Body = () => {
   // Get current products
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-  const currentProducts = products.slice(
-    indexOfFirstProduct,
-    indexOfLastProduct
-  );
+  const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
   return (
     <div>
@@ -63,28 +55,15 @@ const Body = () => {
           <div className="col-md-7">
             <h2 className="featurette-heading lh-1">Mebelin Furniture</h2>
             <p className="lead">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum,
-              ut. Itaque quod vel incidunt, porro quo voluptate hic, iusto
-              voluptates fugit quis maiores adipisci dolorum quos maxime dolorem
-              sed nemo commodi modi in animi qui deserunt. Nemo laboriosam
-              molestias temporibus placeat harum suscipit ipsum dolorum, eum
-              libero quia facilis quae architecto voluptatibus reprehenderit
-              officia reiciendis. Nemo enim omnis placeat recusandae qui magni
-              commodi, rem debitis hic totam tempora soluta, quis eos vero
-              voluptatem, velit tenetur consequatur? Tempora accusantium
-              nesciunt id asperiores fuga distinctio aut! Laborum culpa
-              voluptatum alias aliquam voluptates consequatur recusandae
-              officiis dolore accusantium in? Nostrum ullam eaque ex.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, ut. Itaque quod vel incidunt, porro quo voluptate hic, iusto voluptates fugit quis maiores adipisci dolorum quos maxime dolorem sed nemo commodi modi in animi
+              qui deserunt. Nemo laboriosam molestias temporibus placeat harum suscipit ipsum dolorum, eum libero quia facilis quae architecto voluptatibus reprehenderit officia reiciendis. Nemo enim omnis placeat recusandae qui magni
+              commodi, rem debitis hic totam tempora soluta, quis eos vero voluptatem, velit tenetur consequatur? Tempora accusantium nesciunt id asperiores fuga distinctio aut! Laborum culpa voluptatum alias aliquam voluptates consequatur
+              recusandae officiis dolore accusantium in? Nostrum ullam eaque ex.
               <br />
             </p>
           </div>
           <div className="col-md-5">
-            <img
-              src="https://m.media-amazon.com/images/I/81UwP++piNL._AC_SL1500_.jpg"
-              alt="about-us"
-              width="450"
-              height="450"
-            />
+            <img src="https://m.media-amazon.com/images/I/81UwP++piNL._AC_SL1500_.jpg" alt="about-us" width="450" height="450" />
           </div>
         </div>
       </section>
@@ -99,9 +78,7 @@ const Body = () => {
 
               <div className="card-body">
                 <h5 className="card-title">Quality</h5>
-                <p className="card-text">
-                  We provide high-quality products that are built to last.
-                </p>
+                <p className="card-text">We provide high-quality products that are built to last.</p>
               </div>
             </div>
           </div>
@@ -111,9 +88,7 @@ const Body = () => {
 
               <div className="card-body">
                 <h5 className="card-title">Service</h5>
-                <p className="card-text">
-                  Our team is dedicated to providing excellent customer service.
-                </p>
+                <p className="card-text">Our team is dedicated to providing excellent customer service.</p>
               </div>
             </div>
           </div>
@@ -123,9 +98,7 @@ const Body = () => {
 
               <div className="card-body">
                 <h5 className="card-title">Variety</h5>
-                <p className="card-text">
-                  Choose from a wide range of options to suit your needs.
-                </p>
+                <p className="card-text">Choose from a wide range of options to suit your needs.</p>
               </div>
             </div>
           </div>
@@ -135,9 +108,7 @@ const Body = () => {
 
               <div className="card-body">
                 <h5 className="card-title">Affordability</h5>
-                <p className="card-text">
-                  Get great products at affordable prices.
-                </p>
+                <p className="card-text">Get great products at affordable prices.</p>
               </div>
             </div>
           </div>
@@ -154,9 +125,7 @@ const Body = () => {
               <div className="card card-transition">
                 <Link to={`/category/${category}`}>
                   <img
-                    src={`https://fakestoreapi.com/img/category${
-                      index + 1
-                    }.jpg`} // Placeholder for category image
+                    src={`https://fakestoreapi.com/img/category${index + 1}.jpg`} // Placeholder for category image
                     className="card-img-top"
                     alt={category}
                   />
@@ -186,11 +155,7 @@ const Body = () => {
             <div className="col-md-3 mb-5" key={product.id}>
               <div className="card our-produk-card">
                 <Link to={`/product/${product.id}`}>
-                  <img
-                    src={product.image}
-                    className="card-img-top"
-                    alt={product.title}
-                  />
+                  <img src={product.image} className="card-img-top" alt={product.title} />
                 </Link>
                 <div className="card-body">
                   <h5 className="card-title">{product.title}</h5>

@@ -36,8 +36,34 @@
   -o-border-radius: 50%;
 }
 .search-form {
-  width: 100%;
-  max-width: 500px; /* Adjust as needed */
-  display: flex;
-  justify-content: center;
+  position: relative;
+  width: 70%;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1050; /* Ensure it appears above other elements */
+  background-color: #fff; /* Match the background to the input */
+  border: 1px solid #ddd;
+  border-radius: 0 0 4px 4px;
+}
+
+.search-dropdown .dropdown-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Ensure the dropdown appears correctly in off-canvas */
+@media (max-width: 991px) {
+  .offcanvas .search-dropdown {
+    left: 15px;
+    right: 15px;
+    width: auto;
+  }
 }
