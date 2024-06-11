@@ -1,14 +1,7 @@
-* {
-  font-family: Georgia, "Times New Roman", Times, serif;
+.container-pcategory h1 {
+  margin-top: 75px;
+  text-align: center;
 }
-/* 
-.container {
-  margin: 25px 50px;
-}
-
-.container h1 {
-  margin-top: 70px;
-} */
 
 /* .card img {
   width: 100%;

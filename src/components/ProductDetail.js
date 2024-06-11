@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import "../css/ProductDetail.css";
 import Navbar from "./Navbar";
-import Footer from "./Footer"; // Import the Footer component
+import Footer from "./Footer"; // Import the Footer component'
+import BackToTopButton from "./BackToTopButton";
+
+import "../css/ProductDetail.css";
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -32,6 +34,9 @@ const ProductDetail = () => {
       .catch((error) => {
         console.error("Error fetching available products:", error);
       });
+
+    // Scroll to top when product ID changes
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [id]);
 
   const handlePageChange = (action) => {
@@ -120,6 +125,7 @@ const ProductDetail = () => {
         </div>
       </div>
       <Footer />
+      <BackToTopButton />
     </>
   );
 };

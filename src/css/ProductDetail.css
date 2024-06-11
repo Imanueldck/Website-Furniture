@@ -47,7 +47,7 @@
 }
 
 .product-details .add-to-cart {
-  background-color: #4caf50;
+  background-color: #294b29;
   color: white;
   border: none;
   padding: 10px;
@@ -93,7 +93,7 @@
 }
 
 .slider-button {
-  background-color: #4caf50;
+  background-color: #294b29;
   color: white;
   border: none;
   padding: 10px;
@@ -145,10 +145,19 @@
 }
 
 .product-card .add-to-cart {
-  background-color: #4caf50;
+  background-color: #294b29;
   color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
   margin-top: 10px;
+}
+
+.product-card a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit color from parent */
+}
+
+.product-card a:hover {
+  color: #294b29; /* Change color on hover */
 }

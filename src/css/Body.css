@@ -1,7 +1,10 @@
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
 #about-us {
   width: 100%;
   padding: 25px;
-  margin-top: 20px;
   background-color: #294b29;
   color: white;
   border-radius: 10px;
@@ -100,7 +103,7 @@
   margin: 0 auto;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  width: 50%; /* Mengatur lebar gambar menjadi 80% dari lebar kartu */
+  width: 50%; /* Mengatur lebar gambar menjadi 50% dari lebar kartu */
   height: 50%; /* Mengatur tinggi gambar agar proporsional */
 }
 
@@ -137,7 +140,7 @@
 .view-products-link {
   color: #007bff;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
 
 .view-products-link:hover {
@@ -153,6 +156,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ddd;
+  padding: 20px;
 }
 
 .our-products-section .our-produk-card:hover {
@@ -162,10 +168,9 @@
 
 /* Gaya untuk gambar di dalam kartu produk */
 .our-products-section .our-produk-card .card-img-top {
-  width: 100%;
-  height: 200px; /* Tinggi yang konsisten untuk semua gambar */
-  object-fit: cover;
-  border-bottom: 1px solid #ddd;
+  width: 13rem;
+  height: 12rem;
+  margin: 20px;
 }
 
 /* Gaya untuk judul dan teks di dalam kartu produk */
@@ -259,7 +264,8 @@
 
 .product img {
   width: 100%;
-  height: auto;
+  height: 200px; /* Tetapkan tinggi tetap */
+  object-fit: cover; /* Memastikan gambar tidak terpotong dan tetap proporsional */
 }
 
 .product-info {
@@ -319,7 +325,22 @@
 .navigation-button.right {
   right: 0;
 }
-
-.container-test {
-  width: 100%;
+.scrollUp {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  padding: 10px 20px;
+  background: #294b29;
+  color: #fff;
+  font-size: 25px;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  padding: 0;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px #00000026;
+}
+.scrollUp:hover {
+  background: #2c2d3f;
 }

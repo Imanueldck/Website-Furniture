@@ -1,26 +1,40 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import BackToTopButton from "./BackToTopButton";
+
 import "../css/AllProduct.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [productsPerPage] = useState(8);
 
   useEffect(() => {
+    fetchProducts();
+    fetchCategories();
+  }, []);
+
+  const fetchProducts = (category = "") => {
+    let url = "https://fakestoreapi.com/products";
+    if (category) {
+      url = `https://fakestoreapi.com/products/category/${category}`;
+    }
     axios
-      .get("https://fakestoreapi.com/products")
+      .get(url)
       .then((response) => {
         setProducts(response.data);
       })
       .catch((error) => {
         console.error("Error fetching products:", error);
       });
+  };
 
+  const fetchCategories = () => {
     axios
       .get("https://fakestoreapi.com/products/categories")
       .then((response) => {
@@ -29,30 +43,31 @@ const AllProducts = () => {
       .catch((error) => {
         console.error("Error fetching categories:", error);
       });
-  }, []);
+  };
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-    if (category === "") {
-      axios
-        .get("https://fakestoreapi.com/products")
-        .then((response) => {
-          setProducts(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching products:", error);
-        });
-    } else {
-      axios
-        .get(`https://fakestoreapi.com/products/category/${category}`)
-        .then((response) => {
-          setProducts(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching products:", error);
-        });
-    }
+    setCurrentPage(1);
+    fetchProducts(category);
   };
+
+  // Pagination logic
+  const indexOfLastProduct = currentPage * productsPerPage;
+  const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
+  const currentProducts = products.slice(
+    indexOfFirstProduct,
+    indexOfLastProduct
+  );
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(products.length / productsPerPage); i++) {
+    pageNumbers.push(i);
+  }
 
   return (
     <>
@@ -91,15 +106,13 @@ const AllProducts = () => {
           <div className="col-md-10">
             <section id="all-products" className="all-products-section">
               <div className="row">
-                {products.map((product) => (
+                {currentProducts.map((product) => (
                   <div className="col-md-3 mb-5" key={product.id}>
                     <div className="card our-produk-card">
                       <Link to={`/product/${product.id}`}>
-                        <img
-                          src={product.image}
-                          className="card-img-top"
-                          alt={product.title}
-                        />
+                        <div className="card-img-container">
+                          <img src={product.image} alt={product.title} />
+                        </div>
                       </Link>
                       <div className="card-body">
                         <h5 className="card-title">{product.title}</h5>
@@ -109,11 +122,27 @@ const AllProducts = () => {
                   </div>
                 ))}
               </div>
+              <nav>
+                <ul className="pagination">
+                  {pageNumbers.map((number) => (
+                    <li key={number} className="page-item">
+                      <a
+                        onClick={() => paginate(number)}
+                        href="#!"
+                        className="page-link"
+                      >
+                        {number}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             </section>
           </div>
         </div>
       </div>
       <Footer />
+      <BackToTopButton />
     </>
   );
 };

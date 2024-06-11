@@ -1,4 +1,4 @@
-/* Gaya khusus untuk kartu produk pada bagian All Products */
+/* Styling for the product cards in the All Products section */
 .all-products-section .our-produk-card {
   border-radius: 8px;
   overflow: hidden;
@@ -7,6 +7,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ddd;
+  padding: 20px;
 }
 
 .all-products-section .our-produk-card:hover {
@@ -14,33 +17,41 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Gaya untuk gambar di dalam kartu produk */
-.all-products-section .our-produk-card .card-img-top {
+/* Styling for the image inside the product card */
+.all-products-section .our-produk-card .card-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: 200px; /* Tinggi yang konsisten untuk semua gambar */
-  object-fit: cover;
-  border-bottom: 1px solid #ddd;
+  height: 200px; /* Consistent height for all images */
+  overflow: hidden; /* Hide overflow to crop the images */
+  /*border-bottom: 1px solid #ddd; */
 }
 
-/* Gaya untuk judul dan teks di dalam kartu produk */
+.all-products-section .our-produk-card .card-img-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+/* Styling for the title and text inside the product card */
 .all-products-section .our-produk-card .card-body {
   text-align: center;
-  padding: 1rem;
-  flex-grow: 1;
+  padding: 2rem 0;
 }
 
 .all-products-section .our-produk-card .card-title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  color: #333333;
 }
 
 .all-products-section .our-produk-card .card-text {
   font-size: 1rem;
   color: #333333;
-  margin-top: auto;
 }
 
-/* Gaya untuk sidebar kategori */
+/* Styling for the category sidebar */
 .card-category {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -52,6 +63,8 @@
   background-color: #f8f9fa;
   font-size: 1.25rem;
   font-weight: bold;
+  text-align: center;
+  padding: 10px;
 }
 
 .card-category .list-group-item {
@@ -65,13 +78,17 @@
   border-color: #ddd;
 }
 
-/* Gaya untuk container utama */
+.pagination {
+  justify-content: center;
+}
+
+/* Styling for the main container */
 .container-allproduct {
   display: flex;
   flex-wrap: nowrap;
   margin: 75px;
 }
-
+/* 
 .all-products-section {
   padding: 20px;
-}
+} */
