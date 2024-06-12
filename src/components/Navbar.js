@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import "../css/Navbar.css";
 import image3 from "../images/user3-128x128.jpg";
+import logo from "../images/logo.png";
+import "../css/Navbar.css";
 
 const Navbar = () => {
   const [cart, setCart] = useState(null);
@@ -116,93 +117,71 @@ const Navbar = () => {
   };
 
   return (
-    <>
-      <nav className="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-        <div className="container">
-          <Link to="/" className="navbar-brand custom-navbar-brand">
-            Mebelin
-          </Link>
-          <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="offcanvas offcanvas-end text-bg-dark custom-offcanvas" tabIndex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
-            <div className="offcanvas-header custom-offcanvas-header">
-              <h5 className="offcanvas-title custom-offcanvas-title" id="offcanvasNavbar2Label">
-                Mebel
-              </h5>
-              <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <nav className="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div className="container">
+        <Link to="/" className="navbar-brand">
+          Mebelin
+        </Link>
+        <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="offcanvas offcanvas-end text-bg-dark" tabIndex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+          <div className="offcanvas-header">
+            <h5 className="offcanvas-title" id="offcanvasNavbar2Label">
+              Mebel
+            </h5>
+            <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div className="offcanvas-body">
+            <div className="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <form className="d-flex mt-3 mt-lg-0 mx-auto search-form position-relative" role="search">
+                <div className="input-group">
+                  <span className="input-group-text">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                  </span>
+                  <input type="text" className="form-control" placeholder="Search" value={searchQuery} onChange={handleSearchInputChange} />
+                </div>
+                {searchResults.length > 0 && (
+                  <ul className="dropdown-menu show search-dropdown position-absolute">
+                    {searchResults.map((result) => (
+                      <li key={result.id}>
+                        <Link to={`/product/${result.id}`} className="dropdown-item">
+                          {result.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </form>
             </div>
-            <div className="offcanvas-body custom-offcanvas-body">
-              <div className="navbar-nav justify-content-center flex-grow-1 pe-3">
-                <form className="d-flex mt-3 mt-lg-0 mx-auto custom-search-form position-relative" role="search">
-                  <div className="input-group">
-                    <span className="input-group-text custom-input-group-text">
-                      <FontAwesomeIcon icon={faMagnifyingGlass} />
-                    </span>
-                    <input type="text" className="form-control custom-search-input" placeholder="Search" value={searchQuery} onChange={handleSearchInputChange} />
-                  </div>
-                  {searchResults.length > 0 && (
-                    <ul className="dropdown-menu show custom-search-dropdown position-absolute">
-                      {searchResults.map((result) => (
-                        <li key={result.id}>
-                          <Link to={`/product/${result.id}`} className="dropdown-item custom-dropdown-item">
-                            {result.title}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </form>
-              </div>
-              <ul className="navbar-nav d-flex justify-content-center">
-                <li className="nav-item dropdown custom-nav-item">
-                  <a className="nav-link custom-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <FontAwesomeIcon icon={faCartShopping} />
-                  </a>
-                  <ul className="dropdown-menu dropdown-menu-lg-end custom-dropdown-menu">{renderItems()}</ul>
-                </li>
-                <li className="nav-item dropdown custom-nav-item">
-                  <Link to="/login" className="nav-link custom-nav-link">
-                    <span className="brand-text font-weight-light custom-brand-text">Login</span>
-                    <img
-                      src={image3}
-                      alt=""
-                      className="brand-image img-circle elevation-3 custom-brand-image"
-                      styles={{
-                        opacity: 0.8,
-                        width: "35px",
-                        height: "35px",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <ul className="navbar-nav d-flex justify-content-center">
+              <li className="nav-item dropdown">
+                <a className="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <FontAwesomeIcon icon={faCartShopping} />
+                </a>
+                <ul className="dropdown-menu dropdown-menu-lg-end">{renderItems()}</ul>
+              </li>
+              <li className="nav-item dropdown">
+                <Link to="/login" className="nav-link">
+                  <span className="brand-text font-weight-light">Login</span>
+                  <img
+                    src={image3}
+                    alt=""
+                    className="brand-image img-circle elevation-3"
+                    styles={{
+                      opacity: 0.8,
+                      width: "35px",
+                      height: "35px",
+                      objectFit: "cover",
+                    }}
+                  />
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
-      </nav>
-      {/* New section below the navbar */}
-      <div className="navbar-submenu container-navbar mt-5 custom-navbar-submenu ">
-        <ul className="nav nav-pills justify-content-center">
-          <li className="nav-item custom-submenu-item">
-            <Link to="/about" className="nav-link custom-submenu-link">
-              About Us
-            </Link>
-          </li>
-          <li className="nav-item custom-submenu-item">
-            <Link to="/products" className="nav-link custom-submenu-link">
-              Produk
-            </Link>
-          </li>
-          <li className="nav-item custom-submenu-item">
-            <Link to="/faq" className="nav-link custom-submenu-link">
-              FAQ
-            </Link>
-          </li>
-        </ul>
       </div>
-    </>
+    </nav>
   );
 };
 

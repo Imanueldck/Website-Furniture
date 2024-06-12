@@ -1,54 +1,16 @@
-/* ProductsByCategory.css */
-
-.category-container {
-  margin-top: 80px; /* Adjust this if you have a fixed navbar */
-  padding: 20px;
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+/* 
+.container {
+  margin: 25px 50px;
 }
 
-.category-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-}
+.container h1 {
+  margin-top: 70px;
+} */
 
-.category-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.category-col-md-3 {
-  flex: 0 0 23%;
-  max-width: 23%;
-}
-
-@media (max-width: 768px) {
-  .category-col-md-3 {
-    flex: 0 0 48%;
-    max-width: 48%;
-  }
-}
-
-@media (max-width: 576px) {
-  .category-col-md-3 {
-    flex: 0 0 98%;
-    max-width: 98%;
-  }
-}
-
-.category-card {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow: hidden;
-  transition: transform 0.2s;
-}
-
-.category-card:hover {
-  transform: scale(1.05);
-}
-
-.category-card-img-top {
+/* .card img {
   width: 100%;
   height: 200px;
   object-fit: cover;

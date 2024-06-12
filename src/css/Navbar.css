@@ -35,8 +35,7 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-
-.custom-search-form {
+.search-form {
   position: relative;
   width: 70%;
 }
