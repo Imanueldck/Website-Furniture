@@ -1,24 +1,24 @@
-/* Custom Navbar styles */
-.custom-navbar,
-.custom-offcanvas {
+/* Navbar styles */
+.navbar,
+.offcanvas {
   background-color: #294b29;
   color: white;
 }
 
-.custom-offcanvas-body {
+.offcanvas-body {
   background-color: #294b29;
 }
 
-.custom-offcanvas-header {
+.offcanvas-header {
   color: white;
   background-color: #294b29;
 }
 
-.custom-navbar-brand {
+.navbar-brand {
   font-size: 1.5rem;
 }
 
-.custom-brand-image {
+.brand-image {
   float: right;
   line-height: 0.8;
   margin-left: 0.8rem;
@@ -35,15 +35,15 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
+
 .search-form {
   position: relative;
   width: 70%;
 }
 
-.custom-search-dropdown {
+.search-dropdown {
   position: absolute;
   top: 100%;
-
   left: 0;
   right: 0;
   max-height: 300px;
@@ -54,7 +54,7 @@
   border-radius: 0 0 4px 4px;
 }
 
-.custom-search-dropdown .dropdown-item {
+.search-dropdown .dropdown-item {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -62,38 +62,44 @@
 
 /* Ensure the dropdown appears correctly in off-canvas */
 @media (max-width: 991px) {
-  .custom-offcanvas .custom-search-dropdown {
+  .offcanvas .search-dropdown {
     left: 15px;
     right: 15px;
     width: auto;
   }
 }
 
-/* Styles for navbar submenu */
-.custom-navbar-submenu {
-  background-color: #294b29;
+.navbar-submenu {
+  background-color: #343a40;
   padding: 10px 0;
 }
 
-.custom-navbar-submenu .nav-link {
+.navbar-submenu .nav-link {
   color: #ffffff;
   margin: 0 10px;
 }
 
-.custom-navbar-submenu .nav-link:hover {
-  color: #ffc107;
-  text-decoration: underline;
+.navbar-submenu .nav-link:hover {
+  color: #d1d1d1;
 }
 
-/* Additional styles for submenu items */
-.custom-submenu-item {
-  margin-right: 20px;
+/* Submenu styles */
+.offcanvas-submenu {
+  list-style: none;
+  padding: 0;
 }
 
-.custom-submenu-link {
-  font-size: 1.2rem;
+.offcanvas-submenu .nav-item {
+  margin-bottom: 10px;
 }
 
-.custom-submenu-link:hover {
-  color: #ffc107;
+.offcanvas-submenu .nav-link {
+  color: #ffffff;
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+}
+
+.offcanvas-submenu .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }

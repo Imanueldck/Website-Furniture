@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import image3 from "../images/user3-128x128.jpg";
-import logo from "../images/logo.png";
 import "../css/Navbar.css";
+import image3 from "../images/user3-128x128.jpg";
 
 const Navbar = () => {
   const [cart, setCart] = useState(null);
@@ -135,23 +134,7 @@ const Navbar = () => {
           <div className="offcanvas-body">
             <div className="navbar-nav justify-content-center flex-grow-1 pe-3">
               <form className="d-flex mt-3 mt-lg-0 mx-auto search-form position-relative" role="search">
-                <div className="input-group">
-                  <span className="input-group-text">
-                    <FontAwesomeIcon icon={faMagnifyingGlass} />
-                  </span>
-                  <input type="text" className="form-control" placeholder="Search" value={searchQuery} onChange={handleSearchInputChange} />
-                </div>
-                {searchResults.length > 0 && (
-                  <ul className="dropdown-menu show search-dropdown position-absolute">
-                    {searchResults.map((result) => (
-                      <li key={result.id}>
-                        <Link to={`/product/${result.id}`} className="dropdown-item">
-                          {result.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                {/* Form pencarian */}
               </form>
             </div>
             <ul className="navbar-nav d-flex justify-content-center">
@@ -175,6 +158,24 @@ const Navbar = () => {
                       objectFit: "cover",
                     }}
                   />
+                </Link>
+              </li>
+            </ul>
+            {/* Submenu */}
+            <ul className="navbar-nav offcanvas-submenu">
+              <li className="nav-item">
+                <Link to="/about-us" className="nav-link">
+                  About Us
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/products" className="nav-link">
+                  Products
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link to="/faq" className="nav-link">
+                  FAQ
                 </Link>
               </li>
             </ul>

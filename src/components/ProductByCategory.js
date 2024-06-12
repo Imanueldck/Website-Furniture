@@ -4,10 +4,8 @@ import axios from "axios";
 import "../css/ProductByCategory.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import BackToTopButton from "./BackToTopButton";
-import "../css/ProductByCategory.css";
 
-const ProductByCategory = () => {
+const ProductsByCategory = () => {
   const { category } = useParams();
   const [products, setProducts] = useState([]);
 
@@ -25,18 +23,18 @@ const ProductByCategory = () => {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <h1>Products in {category}</h1>
-        <div className="row">
+      <div className="category-container">
+        <h1 className="category-title">Products in {category}</h1>
+        <div className="category-row">
           {products.map((product) => (
-            <div className="col-md-3" key={product.id}>
-              <div className="card">
+            <div className="category-col-md-3" key={product.id}>
+              <div className="category-card">
                 <Link to={`/product/${product.id}`}>
-                  <img src={product.image} className="card-img-top" alt={product.title} />
+                  <img src={product.image} className="category-card-img-top" alt={product.title} />
                 </Link>
-                <div className="card-body">
-                  <h5 className="card-title">{product.title}</h5>
-                  <p className="card-text">
+                <div className="category-card-body">
+                  <h5 className="category-card-title">{product.title}</h5>
+                  <p className="category-card-text">
                     <strong>${product.price}</strong>
                   </p>
                 </div>
