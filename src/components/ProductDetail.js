@@ -1,10 +1,11 @@
+// src/components/ProductDetail.js
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
-import Footer from "./Footer"; // Import the Footer component'
+import Footer from "./Footer";
 import BackToTopButton from "./BackToTopButton";
-
+import { useCart } from "../components/CartContext";
 import "../css/ProductDetail.css";
 
 const ProductDetail = () => {
@@ -12,9 +13,9 @@ const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [availableProducts, setAvailableProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [cart, setCart] = useState([]); // State to store products added to the cart
-  const productsPerPage = 4; // Number of products per page
+  const productsPerPage = 4;
   const totalPages = Math.ceil(availableProducts.length / productsPerPage);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     axios
@@ -35,7 +36,6 @@ const ProductDetail = () => {
         console.error("Error fetching available products:", error);
       });
 
-    // Scroll to top when product ID changes
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [id]);
 
@@ -47,15 +47,10 @@ const ProductDetail = () => {
     }
   };
 
-  const addToCart = (product) => {
-    setCart([...cart, { ...product }]); // Add product to cart with the selected quantity
-  };
-
   if (!product || !availableProducts.length) {
     return <div>Loading...</div>;
   }
 
-  // Calculate the start and end index of products displayed on the current page
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
   const currentProducts = availableProducts.slice(startIndex, endIndex);
@@ -107,7 +102,7 @@ const ProductDetail = () => {
                   </Link>
                   <button
                     className="add-to-cart"
-                    onClick={() => addToCart(prod, 1)}
+                    onClick={() => addToCart(prod)}
                   >
                     Add to Cart
                   </button>

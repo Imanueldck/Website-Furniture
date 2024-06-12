@@ -1,94 +1,55 @@
+// src/components/Cart.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import BackToTopButton from "./BackToTopButton";
+import { useCart } from "../components/CartContext";
 
 const Cart = () => {
   const TAX_RATE = 0.01;
-
-  // State untuk menyimpan jumlah barang
-  const [items, setItems] = useState([
-    { id: 1, name: "Iphone 11 pro", quantity: 2, price: 900 },
-    { id: 2, name: "Samsung galaxy Note 10", quantity: 2, price: 900 },
-    { id: 3, name: "Canon EOS M50", quantity: 1, price: 1199 },
-    { id: 4, name: "MacBook Pro", quantity: 1, price: 1799 },
-  ]);
-
-  // State untuk menyimpan informasi pengiriman
+  const { cart, increaseQuantity, decreaseQuantity, removeItem } = useCart();
+  
   const [shippingInfo, setShippingInfo] = useState({
     address: "",
     phoneNumber: "",
     paymentMethod: "",
   });
 
-  // Fungsi untuk menambah jumlah barang
-  const increaseQuantity = (id) => {
-    const updatedItems = items.map((item) => {
-      if (item.id === id) {
-        return { ...item, quantity: item.quantity + 1 };
-      }
-      return item;
-    });
-    setItems(updatedItems);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setShippingInfo((prevInfo) => ({ ...prevInfo, [name]: value }));
   };
 
-  const decreaseQuantity = (id) => {
-    const updatedItems = items.map((item) => {
-      if (item.id === id) {
-        return { ...item, quantity: item.quantity - 1 };
-      }
-      return item;
-    });
-    setItems(updatedItems);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Shipping Information Submitted:", shippingInfo);
   };
 
-  // Fungsi untuk menghapus item dari keranjang belanja
-  const removeItem = (id) => {
-    const updatedItems = items.filter((item) => item.id !== id);
-    setItems(updatedItems);
-  };
-
-  // Menghitung total harga barang
   const calculateSubtotal = () => {
-    return items.reduce((total, item) => total + item.price * item.quantity, 0);
+    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
-  // Menghitung pajak
   const calculateTax = () => {
     return calculateSubtotal() * TAX_RATE;
   };
 
-  // Handle perubahan pada input form
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setShippingInfo({ ...shippingInfo, [name]: value });
-  };
-
-  // Handle saat form disubmit
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Lakukan sesuatu dengan informasi pengiriman seperti menyimpan atau mengirim ke server
-    console.log("Shipping info:", shippingInfo);
-  };
-
-  // Fungsi untuk merender setiap item di keranjang belanja
   const renderItems = () => {
-    return items.map((item) => (
+    return cart.map((item) => (
       <div key={item.id} className="card mb-3">
         <div className="card-body">
           <div className="d-flex justify-content-between">
             <div className="d-flex flex-row align-items-center">
               <div>
                 <img
-                  src={`https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img${item.id}.webp`}
+                  src={item.image}
                   className="img-fluid rounded-3"
                   alt="Shopping item"
                   style={{ width: "65px" }}
                 />
               </div>
               <div className="ms-3">
-                <h5>{item.name}</h5>
+                <h5>{item.title}</h5>
                 <p className="small mb-0">Quantity: {item.quantity}</p>
               </div>
             </div>
@@ -152,7 +113,7 @@ const Cart = () => {
                       <div>
                         <p className="mb-1">Shopping cart</p>
                         <p className="mb-0">
-                          You have {items.length} items in your cart
+                          You have {cart.length} items in your cart
                         </p>
                       </div>
                       <div>

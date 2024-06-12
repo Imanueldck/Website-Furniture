@@ -1,6 +1,7 @@
 .carousel-item img {
-  max-height: auto;
+  max-height: 1000px;
   object-fit: cover;
+  /* margin-top: 20px; */
 }
 
 .carousel-indicators button {

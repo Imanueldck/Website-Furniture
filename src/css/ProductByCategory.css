@@ -1,79 +1,38 @@
-/* ProductByCategory styles */
-.category-container {
-  padding: 6rem 2rem 2rem; /* Add top padding to avoid overlap with navbar */
-  background-color: #f8f9fa;
+.container.container-pcategory {
+  padding: 35px;
 }
 
-.category-title {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+.container-pcategory h1 {
+  margin-top: 75px;
+  margin-bottom: 35px;
   text-align: center;
-  color: #343a40;
 }
 
-.category-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 1rem;
-}
-
-.category-col-md-3 {
-  flex: 1 1 21%;
-  max-width: 21%;
-  box-sizing: border-box;
-}
-
-.category-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.card-category {
+  padding-top: 25px;
+  border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  background-color: #ffffff;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Ensuring all cards are the same height */
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ddd;
+  padding: 20px;
 }
 
-.category-card:hover {
-  transform: scale(1.05);
+.card-category:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.category-card-img-top {
+/* Styling for the image inside the product card */
+.card-category .card-img-top {
   width: 100%;
   height: 200px;
-  object-fit: cover;
-}
-
-.category-card-body {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Make body grow to fill the remaining space */
-}
-
-.category-card-title {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  color: #343a40;
-}
-
-.category-card-text {
-  font-size: 1rem;
-  color: #495057;
-  margin-top: auto; /* Push the price to the bottom */
-}
-
-@media (max-width: 768px) {
-  .category-col-md-3 {
-    flex: 1 1 46%;
-    max-width: 46%;
-  }
-}
-
-@media (max-width: 576px) {
-  .category-col-md-3 {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  margin: auto;
 }

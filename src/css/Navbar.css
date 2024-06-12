@@ -69,37 +69,31 @@
   }
 }
 
-.navbar-submenu {
-  background-color: #343a40;
+/* Styles for navbar submenu */
+.custom-navbar-submenu {
+  background-color: #294b29;
   padding: 10px 0;
 }
 
-.navbar-submenu .nav-link {
+.custom-navbar-submenu .nav-link {
   color: #ffffff;
   margin: 0 10px;
 }
 
-.navbar-submenu .nav-link:hover {
-  color: #d1d1d1;
+.custom-navbar-submenu .nav-link:hover {
+  color: #ffc107;
+  text-decoration: underline;
 }
 
-/* Submenu styles */
-.offcanvas-submenu {
-  list-style: none;
-  padding: 0;
+/* Additional styles for submenu items */
+.custom-submenu-item {
+  margin-right: 20px;
 }
 
-.offcanvas-submenu .nav-item {
-  margin-bottom: 10px;
+.custom-submenu-link {
+  font-size: 1.2rem;
 }
 
-.offcanvas-submenu .nav-link {
-  color: #ffffff;
-  padding: 10px;
-  display: block;
-  text-decoration: none;
-}
-
-.offcanvas-submenu .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.custom-submenu-link:hover {
+  color: #ffc107;
 }

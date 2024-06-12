@@ -1,3 +1,4 @@
+// App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -14,21 +15,23 @@ import ProductDetail from "./components/ProductDetail";
 import ProductByCategory from "./components/ProductByCategory";
 import AllProducts from "./components/AllProducts";
 import BackToTopButton from "./components/BackToTopButton";
+import { CartProvider } from "./components/CartContext"; // Import CartProvider
 
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/all-products/" element={<AllProducts />} />
-
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/category/:category" element={<ProductByCategory />} />
-      </Routes>
-    </Router>
+    <CartProvider> {/* Use CartProvider to provide cart context */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/all-products/" element={<AllProducts />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/category/:category" element={<ProductByCategory />} />
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 };
 
