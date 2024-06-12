@@ -323,3 +323,26 @@
 .container-test {
   width: 100%;
 }
+/* FAQ Section */
+.faq-section {
+  margin-top: 80px; /* Adjust this if needed */
+  padding: 20px;
+}
+
+.faq-section .h1-center {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+}
+
+.accordion-button {
+  font-size: 1.2rem;
+}
+
+.accordion-body {
+  font-size: 1rem;
+}

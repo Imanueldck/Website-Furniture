@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../css/Body.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSackDollar, faThumbsUp, faHandshake, faMedal } from "@fortawesome/free-solid-svg-icons";
+
 const Body = () => {
   const productsWrapperRef = useRef(null);
 
@@ -249,6 +250,66 @@ const Body = () => {
         <button className="navigation-button right" onClick={scrollRight}>
           &gt;
         </button>
+      </section>
+
+      {/* Bagian FAQ */}
+      <section id="faq" className="faq-section container">
+        <h1 className="h1-center">FAQ</h1>
+        <div className="accordion" id="faqAccordion">
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingOne">
+              <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Apa jenis bahan yang digunakan untuk produk furniture?
+              </button>
+            </h2>
+            <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div className="accordion-body">Kami menggunakan berbagai jenis bahan berkualitas tinggi termasuk kayu solid, kayu lapis, MDF, dan bahan ramah lingkungan lainnya untuk memastikan daya tahan dan keindahan produk.</div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingTwo">
+              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Apa saja jenis furniture yang Anda jual?
+              </button>
+            </h2>
+            <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div className="accordion-body">Kami menjual berbagai macam furniture untuk semua ruangan di rumah Anda</div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingThree">
+              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Bagaimana cara merawat produk furniture?
+              </button>
+            </h2>
+            <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div className="accordion-body">
+                Untuk menjaga keindahan dan keawetan furniture, kami menyarankan untuk membersihkannya dengan kain lembut dan kering secara teratur dan menghindari penggunaan bahan kimia keras. Kami juga menyediakan panduan perawatan
+                spesifik untuk setiap produk.
+              </div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingFour">
+              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Apakah Anda menawarkan layanan pengiriman?
+              </button>
+            </h2>
+            <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div className="accordion-body">Ya, kami menawarkan layanan pengiriman ke seluruh Indonesia dengan biaya yang bervariasi tergantung lokasi. Kami juga menawarkan pengiriman gratis untuk pesanan di atas jumlah tertentu.</div>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <h2 className="accordion-header" id="headingFive">
+              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Bagaimana cara saya melakukan pembayaran?
+              </button>
+            </h2>
+            <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div className="accordion-body">Transfer bank: Anda dapat mentransfer pembayaran ke rekening bank kami.</div>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );

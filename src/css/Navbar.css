@@ -1,24 +1,24 @@
-/* Navbar styles */
-.navbar,
-.offcanvas {
+/* Custom Navbar styles */
+.custom-navbar,
+.custom-offcanvas {
   background-color: #294b29;
   color: white;
 }
 
-.offcanvas-body {
+.custom-offcanvas-body {
   background-color: #294b29;
 }
 
-.offcanvas-header {
+.custom-offcanvas-header {
   color: white;
   background-color: #294b29;
 }
 
-.navbar-brand {
+.custom-navbar-brand {
   font-size: 1.5rem;
 }
 
-.brand-image {
+.custom-brand-image {
   float: right;
   line-height: 0.8;
   margin-left: 0.8rem;
@@ -35,14 +35,16 @@
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-.search-form {
+
+.custom-search-form {
   position: relative;
   width: 70%;
 }
 
-.search-dropdown {
+.custom-search-dropdown {
   position: absolute;
   top: 100%;
+
   left: 0;
   right: 0;
   max-height: 300px;
@@ -53,7 +55,7 @@
   border-radius: 0 0 4px 4px;
 }
 
-.search-dropdown .dropdown-item {
+.custom-search-dropdown .dropdown-item {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -61,9 +63,38 @@
 
 /* Ensure the dropdown appears correctly in off-canvas */
 @media (max-width: 991px) {
-  .offcanvas .search-dropdown {
+  .custom-offcanvas .custom-search-dropdown {
     left: 15px;
     right: 15px;
     width: auto;
   }
+}
+
+/* Styles for navbar submenu */
+.custom-navbar-submenu {
+  background-color: #294b29;
+  padding: 10px 0;
+}
+
+.custom-navbar-submenu .nav-link {
+  color: #ffffff;
+  margin: 0 10px;
+}
+
+.custom-navbar-submenu .nav-link:hover {
+  color: #ffc107;
+  text-decoration: underline;
+}
+
+/* Additional styles for submenu items */
+.custom-submenu-item {
+  margin-right: 20px;
+}
+
+.custom-submenu-link {
+  font-size: 1.2rem;
+}
+
+.custom-submenu-link:hover {
+  color: #ffc107;
 }
