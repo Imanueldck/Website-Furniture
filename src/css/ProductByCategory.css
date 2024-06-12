@@ -1,7 +1,6 @@
-/* ProductByCategory.css */
-
+/* ProductByCategory styles */
 .category-container {
-  padding: 2rem;
+  padding: 6rem 2rem 2rem; /* Add top padding to avoid overlap with navbar */
   background-color: #f8f9fa;
 }
 
@@ -31,6 +30,9 @@
   border-radius: 5px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensuring all cards are the same height */
 }
 
 .category-card:hover {
@@ -39,12 +41,15 @@
 
 .category-card-img-top {
   width: 100%;
-  height: auto;
+  height: 200px;
   object-fit: cover;
 }
 
 .category-card-body {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Make body grow to fill the remaining space */
 }
 
 .category-card-title {
@@ -56,6 +61,7 @@
 .category-card-text {
   font-size: 1rem;
   color: #495057;
+  margin-top: auto; /* Push the price to the bottom */
 }
 
 @media (max-width: 768px) {
